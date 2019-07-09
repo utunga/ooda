@@ -1,6 +1,6 @@
 {
-  "name": "feathers-vuex-todomvc-client",
-  "description": "Vue, feathers and feathers-vuex todoMVC repo client",
+  "name": "OoodaLoops-client",
+  "description": "Vue, feathers and feathers-vuex OOODA Loops client",
   "version": "0.1.0",
   "private": true,
   "scripts": {

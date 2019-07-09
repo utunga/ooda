@@ -1,19 +1,21 @@
 {
-  "name": "feathers-vuex-todomvc-server",
-  "description": "Vue, feathers and feathers-vuex todoMVC repo server",
+  "name": "OoodaLoops-Server",
+  "description": "Vue, feathers and feathers-vuex OODA loops Server",
   "version": "0.0.0",
   "homepage": "",
   "main": "src",
   "keywords": [
     "feathers"
   ],
-  "author": "Will Murray <willdavidmurray@gmail.com>",
-  "contributors": [],
+  "author": "utunga <utunga@gmail.com>",
+  "contributors": [
+    "Will Murray <willdavidmurray@gmail.com>"
+  ],
   "directories": {
     "test": "test"
   },
   "engines": {
-    "node": "^8.0.0",
+    "node": "^10.0.0",
     "npm": ">= 3.0.0"
   },
   "scripts": {

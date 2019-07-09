@@ -2,7 +2,7 @@ import feathersVuex from "feathers-vuex";
 import feathersClient from "@/feathers";
 
 const { service } = feathersVuex(feathersClient, { idField: "_id" });
-const servicePath = "todos";
+const servicePath = "loops";
 
 const servicePlugin = service(servicePath, {
   instanceDefaults: {
@@ -43,4 +43,4 @@ feathersClient.service(servicePath).hooks({
 
 export default servicePlugin;
 
-console.log("todos service loaded");
+console.log("loops service loaded");
