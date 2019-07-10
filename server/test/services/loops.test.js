@@ -5,6 +5,6 @@ describe('\'loops\' service', () => {
   it('registered the service', () => {
     const service = app.service('loops');
 
-    assert.ok(service, 'Registered the service');
+    assert.ok(service, 'Registered the service for loops');
   });
 });

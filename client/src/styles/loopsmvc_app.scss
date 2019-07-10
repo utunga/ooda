@@ -265,21 +265,33 @@ label[for='toggle-all'] {
 	}
 }
 
-.loop-list li.completed label {
-	color: #d9d9d9;
+.loop-list li.completed.success label {
+	color: #092917;
+	background-color: #4ca775;
 }
 
-.loop-list li .cancel {
-	display: none;
-}
-
-.loop-list li:hover .cancel {
-	display: block;
+.loop-list li.completed.fail label {
+	color: #111104;
+	background-color: #a1a74c;
 }
 
 .loop-list li .accept,
 .loop-list li .cancel,
 .loop-list li .succeed {
+	display: none;
+}
+
+.loop-list li:hover .accept,
+.loop-list li:hover .cancel,
+.loop-list li:hover .succeed {
+	display: block;
+}
+
+.loop-list li .accept,
+.loop-list li .cancel,
+.loop-list li .succeed,
+.loop-list li .remove
+{
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -295,23 +307,22 @@ label[for='toggle-all'] {
 		color: #af5b5e;
 	}
 }
-
 .loop-list li .cancel {
 	right: 10px;
 	&:after {
-		content: '×';
+		content: '❌';
 	}
 }
 
 .loop-list li .accept {
-	right: 40px;
+	right: 60px;
 	&:after {
 		content: '👍';
 	}
 }
 
 .loop-list li .succeed {
-	right: 40px;
+	right: 60px;
 	&:after {
 		content: '✓';
 	}

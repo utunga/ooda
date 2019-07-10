@@ -12,6 +12,7 @@
     "Will Murray <willdavidmurray@gmail.com>"
   ],
   "directories": {
+    "lib": "src",
     "test": "test"
   },
   "engines": {
@@ -25,7 +26,8 @@
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
     "upgrade-interactive": "npm-check --update",
-    "deploy": "now --public --target production"
+    "deploy": "now --public --target production",
+    "mongod": "mongod --config /usr/local/etc/mongod.conf"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.2",
@@ -35,8 +37,11 @@
     "@feathersjs/socketio": "^3.2.4",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
+    "feathers-mongoose": "^7.3.2",
     "feathers-nedb": "^3.1.0",
     "helmet": "^3.13.0",
+    "mongodb-core": "^3.2.7",
+    "mongoose": "^5.6.4",
     "nedb": "^1.8.0",
     "serve-favicon": "^2.5.0",
     "winston": "^3.1.0"

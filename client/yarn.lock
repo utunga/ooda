@@ -8791,6 +8791,11 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-confirmation-button@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-confirmation-button/-/vue-confirmation-button-1.0.1.tgz#e5c3c192432af3d837e36e8ab5b9994e44ddb181"
+  integrity sha512-PBJCDyFNLfdfTAW8dAAfIvRPyQJfz6TlXjp9QPgCGOe4/qC2ZIOPMsaQE26Jzg10f6TjeqpDM8JQQ+rdvnxVBw==
+
 vue-eslint-parser@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/vue-eslint-parser/-/vue-eslint-parser-2.0.3.tgz#c268c96c6d94cfe3d938a5f7593959b0ca3360d1"

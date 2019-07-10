@@ -37,10 +37,10 @@
           <li v-for="loop in filteredLoops"
               class="loop"
               :key="loop.id"
-              :class="{ completed: loop.completed, editing: loop == editedLoop }">
+              :class="{ completed: loop.completed, success: loop.success, fail: !loop.success, editing: loop == editedLoop }">
             <div class="view">
               <div class="success_tick" v-show="loop.completed && loop.success">✓</div>
-              <div class="fail_tick" v-show="loop.completed && !loop.success">🙃</div>
+              <div class="fail_tick" v-show="loop.completed && !loop.success">☠️</div>
               <label @dblclick="editLoop(loop)">{{ loop.title }}
                   <div class="loop_details">
                     <div class="for">For: {{ loop.for }}</div>
@@ -48,9 +48,18 @@
                     <div class="week">Status : {{ loop.status }}</div>
                   </div>
               </label>
-              <button class="accept" v-if="loop.status==='proposed'"  @click="acceptLoop(loop)"></button>
-              <button class="succeed" v-if="loop.status==='open'"  @click="succeedLoop(loop)"></button>
-              <button class="cancel" v-if="!loop.completed" @click="cancelLoop(loop)"></button>
+              <button class="accept" title="Commit to doing this?" v-if="loop.status==='proposed'"  @click="acceptLoop(loop)" ></button>
+              <button class="succeed" title="Mark your success!" v-if="loop.status==='open'"  @click="succeedLoop(loop)"></button>
+              <button class="cancel" title="Abandon this one" v-if="!loop.completed" @click="cancelLoop(loop)"></button>
+           
+              <!-- <vue-confirmation-button
+                class="remove-confirm"
+                title="Remove from record"
+                v-if="loop.completed" 
+                :messages="['X','Are you sure?','']"
+                v-on:confirmation-success="deleteLoop(loop)">
+              </vue-confirmation-button> -->
+            
             </div>
             <input class="edit" type="text"
                    v-model="loop.title"
@@ -64,17 +73,16 @@
       </section>
       <footer class="footer" v-show="loops.length" v-cloak>
     <span class="loop-count">
-      <strong>You have {{ remaining }}</strong> {{ remaining | pluralize }} open
+      <strong>You have {{ remaining }}</strong> open {{ remaining | pluralize }}
     </span>
         <ul class="filters">
           <li><a href="#/all" :class="{ selected: visibility == 'all' }">All</a></li>
           <li><a href="#/proposed" :class="{ selected: visibility == 'proposed' }">Proposed</a></li>
-          <li><a href="#/mine" :class="{ selected: visibility == 'mine' }">Mine</a></li>
+          <li><a href="#/open" :class="{ selected: visibility == 'open' }">Open</a></li>
           <li><a href="#/closed" :class="{ selected: visibility == 'closed' }">Closed</a></li>
-          <!-- <li><a href="#/completed" :class="{ selected: visibility == 'completed' }">Completed</a></li> -->
-        </ul>
+          </ul>
         <button class="clear-completed" @click="removeCompleted" v-show="loops.length > remaining">
-          Clear completed
+          Remove completed
         </button>
       </footer>
     </section>
@@ -92,6 +100,8 @@
 </template>
 
 <script>
+
+import vueConfirmationButton from 'vue-confirmation-button';
 import LoopsMixin from "@/mixins/LoopsMixin";
 
 // visibility filters
@@ -124,6 +134,9 @@ let filters = {
 export default {
   name: "Loops",
   mixins: [LoopsMixin],
+  components: {
+    'vue-confirmation-button': vueConfirmationButton,
+  },
   mounted() {
     // handle routing
     const onHashChange = () => {
@@ -213,6 +226,9 @@ export default {
         loop.success = false;
         loop.save({});
       }
+    },
+    deleteLoop(loop) {
+        loop.remove({});
     },
     acceptLoop(loop) {
       if (loop.status === "proposed") {
