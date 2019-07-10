@@ -1,0 +1,17 @@
+{
+    "name": "ooda-loops",
+    "type": "static",
+    "static": {
+      "public": "dist",
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    "alias": "ooda-loops",
+    "files": [
+      "dist"
+    ]
+}

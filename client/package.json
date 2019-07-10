@@ -1,5 +1,5 @@
 {
-  "name": "OoodaLoops-client",
+  "name": "ooodaloops-client",
   "description": "Vue, feathers and feathers-vuex OOODA Loops client",
   "version": "0.1.0",
   "private": true,
@@ -8,7 +8,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "test:e2e": "vue-cli-service test:e2e"
+    "test:e2e": "vue-cli-service test:e2e",
+    "deploy": "npm run build && now --public && now alias"
   },
   "dependencies": {
     "@feathersjs/authentication-client": "^1.0.4",

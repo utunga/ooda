@@ -64,7 +64,7 @@
       </section>
       <footer class="footer" v-show="loops.length" v-cloak>
     <span class="loop-count">
-      <strong>{{ remaining }}</strong> {{ remaining | pluralize }} open
+      <strong>You have {{ remaining }}</strong> {{ remaining | pluralize }} open
     </span>
         <ul class="filters">
           <li><a href="#/all" :class="{ selected: visibility == 'all' }">All</a></li>
@@ -158,7 +158,7 @@ export default {
       return filters[this.visibility](this.loops, this.currentUser);
     },
     remaining() {
-      return filters.mine(this.loops).length;
+      return filters.mine(this.loops, this.currentUser).length;
     },
     allDone: {
       get() {

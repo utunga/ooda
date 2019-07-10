@@ -218,15 +218,7 @@ label[for='toggle-all'] {
 	.fail_tick {
 		color: #9e2406;
 	}
-	.loop_details {
-		font-size: 0.9rem;
-		margin-top: 10px;
-		div {
-			display: inline-block;
-			margin-left: 20px;
-			font-weight: 400;
-		}
-	}
+	
 }
 
 .loop-list li .toggle {
@@ -253,12 +245,24 @@ label[for='toggle-all'] {
 }
 
 .loop-list li label {
-	word-break: break-all;
+	word-break: none;
 	padding: 15px 60px 15px 15px;
 	margin-left: 45px;
 	display: block;
 	line-height: 1.2;
+	font-size:1.2rem;
+	font-weight: 400;
 	transition: color 0.4s;
+
+	.loop_details {
+		font-size: 0.9rem;
+		margin-top: 10px;
+		div {
+			display: inline-block;
+			margin-left: 20px;
+			font-weight: 300;
+		}
+	}
 }
 
 .loop-list li.completed label {

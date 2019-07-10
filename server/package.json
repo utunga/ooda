@@ -1,6 +1,6 @@
 {
-  "name": "OoodaLoops-Server",
-  "description": "Vue, feathers and feathers-vuex OODA loops Server",
+  "name": "ooodaloops-server",
+  "description": "OODA loops Server",
   "version": "0.0.0",
   "homepage": "",
   "main": "src",
@@ -24,7 +24,8 @@
     "dev": "nodemon src/",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
-    "upgrade-interactive": "npm-check --update"
+    "upgrade-interactive": "npm-check --update",
+    "deploy": "now --public --target production"
   },
   "dependencies": {
     "@feathersjs/configuration": "^2.0.2",
