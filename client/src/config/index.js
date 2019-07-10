@@ -10,6 +10,7 @@ export default {
     ? "*.now.sh"
     : "localhost",
   connection: !isDev
-    ? "https://ooda-loops-server-hznyijyqys.now.sh"
+    ? "https://ooda-loops-server.now.sh"
     : "http://localhost:3030"
 };
+
