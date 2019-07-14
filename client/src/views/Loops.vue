@@ -221,7 +221,7 @@ export default {
         loop.remove({});
       }
       else if (loop.status === "open") {
-        loop.status = "failed"
+        loop.status = "failed";
         loop.completed = true;
         loop.success = false;
         loop.save({});
@@ -239,7 +239,7 @@ export default {
     },
     succeedLoop(loop) {
       if (loop.status === "open") {
-        loop.status = "succeeded"
+        loop.status = "succeeded";
         loop.completed = true;
         loop.success = true;
         loop.save({});

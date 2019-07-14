@@ -6,6 +6,7 @@ const cors = require('cors');
 const logger = require('./logger');
 
 const feathers = require('@feathersjs/feathers');
+process.env['NODE_CONFIG_DIR'] = path.join(__dirname, 'config/');
 const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');

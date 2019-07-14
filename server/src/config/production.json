@@ -1,5 +1,5 @@
 {
-  "host": "ooodaloops-server.now.sh",
+  "host": "ooda-loops-server.utunga.now.sh",
   "port": "PORT",
   "public": "../public/",
   "paginate": {
