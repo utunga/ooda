@@ -1,8 +1,6 @@
-![logo.png](logo.png)
+# OODA Loops 
 
-# Feathers-vuex TodoMVC demo
-
-This project takes the existing [Vue](https://vuejs.org) [TodoMVC demo](https://vuejs.org/v2/examples/todomvc.html) and adds [Feathers](https://featherjs.com), and [Feathers-vuex](https://feathers-plus.github.io/v1/feathers-vuex) awesomeness!
+Based on Feathers-vuex TodoMVC demo stack which takes the existing [Vue](https://vuejs.org) [TodoMVC demo](https://vuejs.org/v2/examples/todomvc.html) and adds [Feathers](https://featherjs.com), and [Feathers-vuex](https://feathers-plus.github.io/v1/feathers-vuex) awesomeness!
 
 In short, this stack makes it really simple to get reactive updates in Vue from a Feathers.js server, through Vuex.
  
@@ -34,13 +32,6 @@ Navigate to the url displayed (default `localhost:8080`) to view in your browser
 
 ![preview.png](preview.png)
 
-# Still to do - contributions welcome!
-
-- [ ] Filter todos using [reactive live queries](https://feathers-plus.github.io/v1/feathers-vuex/common-patterns.html#Reactive-Lists-with-Live-Queries)
-
-# Why?
-
-I built this because there seemed to be a need for examples containing actual implementation of Feathers with Vue and Feathers-vuex.
 
 # Further information
 
@@ -56,8 +47,3 @@ The service is defined in feathers-vuex: [./client/src/store/services/todos.js](
 
 This is then loaded by the store: [./client/src/store/index.js](https://github.com/wdmtech/feathers-vuex-todomvc/blob/master/client/src/store/index.js)
 
-### &hellip;on the server
-
-#### Initial todo data
-
-The `todos` service is seeded with some initial data, in [./server/src/services/todos/todos.service.js](https://github.com/wdmtech/feathers-vuex-todomvc/blob/master/server/src/services/todos/todos.service.js)
